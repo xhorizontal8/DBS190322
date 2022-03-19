@@ -21,7 +21,7 @@ import joblib
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        rates = request.form.get("rates")
+        rates = request.form.get('rates')
         print(rates)
         model = joblib.load("Dbs_Reg")
         pred = model.predict([[float(rates)]])
